@@ -1,0 +1,15 @@
+<div  class="loader" *ngIf="stillLoafing">
+  <mat-spinner></mat-spinner>
+</div>
+
+<ng-container *ngIf="!stillLoafing">
+  <div  class="error" *ngIf="[false].includes(successResponse)">
+    <p> error while auth code validation </p>
+  </div>
+
+  <div  class="success" *ngIf="[true].includes(successResponse)">
+    <p> Success! </p>
+  </div>
+</ng-container>
+
+

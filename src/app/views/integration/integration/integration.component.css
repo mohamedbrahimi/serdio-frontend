@@ -1,0 +1,41 @@
+.integration-icon {
+  width: 35px;
+}
+.integration-icon-time {
+  width: 22px;
+}
+
+.connection-user-info {
+  justify-content: right;
+}
+
+
+.connection-part-on {
+  text-align: right;
+}
+
+.connection-part-on p{
+  color: gray;
+  font-size: 15px;
+}
+
+.connection-part-off {
+  text-align: center;
+}
+.connection-part-off p {
+  margin: 10px;
+  color: #3f51b5;
+  font-size: 19px;
+  font-weight: bold;
+}
+
+.disconnect-button {
+  width: 140px;
+}
+.disconnect-button-icon {
+  width: 24px;
+  padding: 0px;
+  position: absolute;
+  left: 67px;
+  bottom: -4px;
+}

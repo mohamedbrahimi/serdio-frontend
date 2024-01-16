@@ -1,0 +1,39 @@
+
+<div  class="loader" *ngIf="stillLoafing">
+  <mat-spinner></mat-spinner>
+</div>
+<mat-accordion *ngIf="!stillLoafing">
+  <mat-expansion-panel (opened)="panelOpenState = true"
+                       (closed)="panelOpenState = false">
+    <mat-expansion-panel-header class="custom-mat-expansion-panel">
+      <mat-panel-title>
+        <img src="assets/images/gitgub.png" class="integration-icon">
+        GitHub
+        <ng-container *ngIf="isOnline">
+          <img src="assets/images/online.jpg" class="integration-icon">
+          <img src="assets/images/time.png" class="integration-icon-time">
+        </ng-container>
+
+      </mat-panel-title>
+      <mat-panel-description class="connection-user-info">
+       <p *ngIf="isOnline">
+         {{ user.login }}: Last Synced {{ user.last_request | date:'short'}}
+       </p>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+
+    <ng-container *ngIf="panelOpenState">
+      <div class="connection-part-on" *ngIf="isOnline">
+        <p> Sync Type full </p>
+        <button mat-raised-button color="primary" class="disconnect-button" (click)="removeGithub()">Remove
+          <img src="assets/images/remove.png" class="disconnect-button-icon">
+        </button>
+      </div>
+      <div class="connection-part-off" *ngIf="!isOnline">
+        <button mat-raised-button color="primary" class="connect-button" (click)="connectGithub()">Connect</button>
+        <p> Connect Sredio To github </p>
+      </div>
+    </ng-container>
+
+  </mat-expansion-panel>
+</mat-accordion>
